@@ -49,7 +49,23 @@ export default function AboutPage() {
                 </Link>
               </Button>
             </div>
-            >
+            <div className="relative">
+              <Image
+                src="/images/cybersecurity-data.jpg"
+                alt="Cybersecurity and data protection solutions"
+                width={500}
+                height={400}
+                className="rounded-3xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vision */}
+        <section className="mb-20">
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:shadow-xl transition-shadow">
+              <CardHeader>
                 <Target className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle className="text-2xl">Our Mission</CardTitle>
               </CardHeader>
