@@ -2,305 +2,319 @@
 
 import type React from "react"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
-import { MapPin, Phone, Mail, Clock, Users, Briefcase, GraduationCap } from "lucide-react"
-import { useState } from "react"
+import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    inquiry: "",
-    message: "",
-  })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState("")
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    const formData = new FormData(e.currentTarget)
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formData,
       })
 
-      const result = await response.json()
-
-      if (result.success) {
-        setSubmitMessage("Thank you for your message! We will get back to you soon.")
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          inquiry: "",
-          message: "",
-        })
+      if (response.ok) {
+        setSubmitStatus("success")
+        ;(e.target as HTMLFormElement).reset()
       } else {
-        setSubmitMessage("Something went wrong. Please try again.")
+        setSubmitStatus("error")
       }
     } catch (error) {
-      setSubmitMessage("Something went wrong. Please try again.")
+      setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
     }
   }
 
-  const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
-
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
-            Contact Us
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-2xl text-blue-600 font-semibold mb-4">Let's Start a Conversation</p>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Whether you're looking to explore a partnership, need support with your digital journey, or simply want to
-            learn more about what we do — we'd love to hear from you.
-          </p>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 lg:py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Get In{" "}
+              <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Touch
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              Ready to transform your business? Let's discuss how our technology solutions can help you achieve your
+              goals. We're here to answer your questions and provide expert guidance.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-2xl">Get in Touch</CardTitle>
-              <CardDescription>
-                Fill out the form below and one of our experts will get in touch promptly.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => handleChange("name", e.target.value)}
-                      required
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleChange("email", e.target.value)}
-                      required
-                      className="mt-1"
-                    />
-                  </div>
-                </div>
+      {/* Contact Form & Info */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Send Us a Message</h2>
+              <Card className="border-0 shadow-xl">
+                <CardContent className="p-8">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                          First Name *
+                        </label>
+                        <Input
+                          id="firstName"
+                          name="firstName"
+                          type="text"
+                          required
+                          className="w-full"
+                          placeholder="John"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                          Last Name *
+                        </label>
+                        <Input
+                          id="lastName"
+                          name="lastName"
+                          type="text"
+                          required
+                          className="w-full"
+                          placeholder="Doe"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Address *
+                      </label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        className="w-full"
+                        placeholder="john.doe@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        Phone Number
+                      </label>
+                      <Input id="phone" name="phone" type="tel" className="w-full" placeholder="+91 9999999999" />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                        Company
+                      </label>
+                      <Input
+                        id="company"
+                        name="company"
+                        type="text"
+                        className="w-full"
+                        placeholder="Your Company Name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                        Service Interest
+                      </label>
+                      <select
+                        id="service"
+                        name="service"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      >
+                        <option value="">Select a service</option>
+                        <option value="digital-transformation">Digital Transformation</option>
+                        <option value="it-managed-services">IT Managed Services</option>
+                        <option value="digital-marketing">Digital Marketing</option>
+                        <option value="staff-augmentation">Staff Augmentation</option>
+                        <option value="academy">Academy Training</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                        Message *
+                      </label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={5}
+                        className="w-full"
+                        placeholder="Tell us about your project requirements or questions..."
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold"
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                    </Button>
+                    {submitStatus === "success" && (
+                      <div className="text-green-600 text-center font-medium">
+                        Thank you! Your message has been sent successfully. We'll get back to you soon.
+                      </div>
+                    )}
+                    {submitStatus === "error" && (
+                      <div className="text-red-600 text-center font-medium">
+                        Sorry, there was an error sending your message. Please try again or contact us directly.
+                      </div>
+                    )}
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input
-                      id="phone"
-                      value={formData.phone}
-                      onChange={(e) => handleChange("phone", e.target.value)}
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="company">Company/Organization</Label>
-                    <Input
-                      id="company"
-                      value={formData.company}
-                      onChange={(e) => handleChange("company", e.target.value)}
-                      className="mt-1"
-                    />
-                  </div>
-                </div>
+            {/* Contact Information */}
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Contact Information</h2>
+              <div className="space-y-8">
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <MapPin className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">Office Address</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          Plot No. - A-57, Munchkin Tower, Ground Floor
+                          <br />
+                          Ryan Enclave, Sohna Road
+                          <br />
+                          Gurugram, Haryana, India
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                <div>
-                  <Label htmlFor="inquiry">Type of Inquiry *</Label>
-                  <Select onValueChange={(value) => handleChange("inquiry", value)} required>
-                    <SelectTrigger className="mt-1">
-                      <SelectValue placeholder="Select inquiry type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="digital-transformation">Digital Transformation</SelectItem>
-                      <SelectItem value="managed-services">IT Managed Services</SelectItem>
-                      <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
-                      <SelectItem value="staff-augmentation">Staff Augmentation</SelectItem>
-                      <SelectItem value="academy">Equuleus Academy</SelectItem>
-                      <SelectItem value="careers">Careers</SelectItem>
-                      <SelectItem value="partnership">Partnership</SelectItem>
-                      <SelectItem value="general">General Inquiry</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Phone className="h-6 w-6 text-green-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
+                        <p className="text-gray-600">+91 9999398103</p>
+                        <p className="text-sm text-gray-500 mt-1">Monday - Friday, 9:00 AM - 6:00 PM IST</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                <div>
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleChange("message", e.target.value)}
-                    required
-                    rows={5}
-                    className="mt-1"
-                    placeholder="Tell us about your project, requirements, or questions..."
-                  />
-                </div>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Mail className="h-6 w-6 text-purple-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
+                        <p className="text-gray-600">info@equuleustechnologies.com</p>
+                        <p className="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Clock className="h-6 w-6 text-orange-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">Business Hours</h3>
+                        <div className="text-gray-600 space-y-1">
+                          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                          <p>Saturday: 10:00 AM - 2:00 PM</p>
+                          <p>Sunday: Closed</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                {submitMessage && (
-                  <div
-                    className={`text-center p-3 rounded-lg ${
-                      submitMessage.includes("Thank you") ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700"
-                    }`}
-                  >
-                    {submitMessage}
-                  </div>
-                )}
-              </form>
-            </CardContent>
-          </Card>
-
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Office Information */}
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-blue-50 to-blue-100">
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Quick answers to common questions about our services and processes.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <MapPin className="h-6 w-6 text-blue-600 mr-2" />
-                  Our Office
-                </CardTitle>
+                <CardTitle className="text-lg">How quickly can you start a project?</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2">
-                  <p className="font-semibold">Equuleus Technologies</p>
-                  <p className="text-gray-600">Plot No. - A-57, Munchkin Tower, Ground Floor</p>
-                  <p className="text-gray-600">Ryan Enclave, Sohna Road, Gurugram, Haryana, India</p>
-                </div>
-                <div className="mt-4 flex items-center text-gray-600">
-                  <Clock className="h-5 w-5 mr-2" />
-                  <span>Monday to Friday | 9:30 AM – 6:30 PM IST</span>
-                </div>
+                <p className="text-gray-600">
+                  We can typically begin new projects within 1-2 weeks after the initial consultation and agreement
+                  finalization, depending on project scope and resource availability.
+                </p>
               </CardContent>
             </Card>
-
-            {/* Contact Methods */}
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-green-50 to-green-100">
+            <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
+                <CardTitle className="text-lg">Do you work with small businesses?</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-green-600 mr-3" />
-                  <div>
-                    <p className="font-semibold">General Inquiries</p>
-                    <p className="text-gray-600">info@equuleustechnologies.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-green-600 mr-3" />
-                  <div>
-                    <p className="font-semibold">Phone</p>
-                    <p className="text-gray-600">+91 9999398103</p>
-                  </div>
-                </div>
+              <CardContent>
+                <p className="text-gray-600">
+                  We work with businesses of all sizes, from startups to enterprise organizations. Our solutions are
+                  scalable and tailored to meet your specific needs and budget.
+                </p>
               </CardContent>
             </Card>
-
-            {/* Quick Contact Options */}
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-purple-50 to-purple-100">
+            <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle>Quick Contact</CardTitle>
-                <CardDescription>Reach out directly for specific inquiries</CardDescription>
+                <CardTitle className="text-lg">What is your pricing model?</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
-                  <div className="flex items-center">
-                    <Users className="h-5 w-5 text-blue-600 mr-3" />
-                    <span className="font-medium">Careers</span>
-                  </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-blue-200 text-blue-600 hover:bg-blue-50 bg-transparent"
-                  >
-                    <a href="mailto:careers@equuleustechnologies.com">Email</a>
-                  </Button>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
-                  <div className="flex items-center">
-                    <GraduationCap className="h-5 w-5 text-green-600 mr-3" />
-                    <span className="font-medium">Academy</span>
-                  </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-green-200 text-green-600 hover:bg-green-50 bg-transparent"
-                  >
-                    <a href="mailto:career@equuleustechnologies.com">Email</a>
-                  </Button>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
-                  <div className="flex items-center">
-                    <Briefcase className="h-5 w-5 text-purple-600 mr-3" />
-                    <span className="font-medium">Partnerships</span>
-                  </div>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-purple-200 text-purple-600 hover:bg-purple-50 bg-transparent"
-                  >
-                    <a href="mailto:info@equuleustechnologies.com">Email</a>
-                  </Button>
-                </div>
+              <CardContent>
+                <p className="text-gray-600">
+                  Our pricing varies based on project scope, complexity, and duration. We offer both fixed-price
+                  projects and flexible hourly arrangements. Contact us for a customized quote.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-lg">Do you provide ongoing support?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Yes, we offer comprehensive ongoing support and maintenance services to ensure your systems continue
+                  to perform optimally after project completion.
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
-
-        {/* Map Section */}
-        <section className="mt-20">
-          <Card className="hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-center">Find Us</CardTitle>
-              <CardDescription className="text-center">Located in Gurugram, Haryana</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-gradient-to-br from-blue-50 to-green-50 h-64 rounded-lg flex items-center justify-center">
-                <p className="text-gray-600">Interactive Map Coming Soon</p>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-      </div>
+      </section>
     </div>
   )
 }

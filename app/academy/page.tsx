@@ -1,322 +1,412 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Users, Award, Briefcase, CheckCircle, BookOpen, Code, TrendingUp, Target } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BookOpen, Users, Award, Clock, ArrowRight, Play } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function AcademyPage() {
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
-            Academy
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Equuleus Academy</h1>
-          <p className="text-2xl text-blue-600 font-semibold mb-4">Nurturing Talent. Empowering Futures.</p>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Your gateway to deep industry knowledge, hands-on experience, and accelerated career growth in technology
-          </p>
-        </div>
-
-        {/* Academy Hero Image */}
-        <section className="mb-20">
-          <div className="relative">
-            <Image
-              src="/images/cloud-computing.jpg"
-              alt="Technology learning and cloud computing education"
-              width={1200}
-              height={400}
-              className="w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/60 rounded-3xl flex items-center justify-center">
-              <div className="text-center text-white">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">Learn. Grow. Excel.</h2>
-                <p className="text-xl md:text-2xl opacity-90">
-                  Transform your career with cutting-edge technology skills
-                </p>
-              </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 lg:py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Equuleus{" "}
+              <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Academy
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              Advance your career with industry-leading technology training programs. Learn from experts and gain
+              practical skills that drive real-world results.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8">
+                <Link href="/contact">Enroll Now</Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-full px-8 bg-transparent"
+              >
+                View Courses
+              </Button>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Overview */}
-        <section className="mb-20">
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
-            <CardContent className="py-12">
-              <div className="text-center mb-8">
-                <GraduationCap className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <h2 className="text-3xl font-bold mb-4">Transform Your Career with Us</h2>
-              </div>
-              <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto text-center">
-                At Equuleus Technologies, we believe that true transformation begins with learning. Equuleus Academy is
-                our dedicated initiative to cultivate the next generation of technology professionals through structured
-                training, mentorship, and real-world exposure.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* What We Offer */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
-              Programs
-            </Badge>
-            <h2 className="text-3xl font-bold mb-4">What We Offer</h2>
-            <p className="text-xl text-gray-600">Comprehensive programs designed for your success</p>
+      {/* Why Choose Our Academy */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Why Choose Equuleus Academy?</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our comprehensive training programs are designed by industry experts to provide practical, hands-on
+              learning experiences.
+            </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-blue-50 to-blue-100">
-              <CardHeader>
-                <BookOpen className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle className="text-xl">Industry-Aligned Training Programs</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Designed and delivered by experts, our programs cover emerging technologies, real-world problem
-                  solving, and business-focused IT practices.
-                </p>
-                <div className="space-y-2">
-                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
-                    Cloud Computing
-                  </Badge>
-                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
-                    DevOps
-                  </Badge>
-                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
-                    Digital Marketing
-                  </Badge>
-                  <Badge variant="secondary" className="bg-blue-200 text-blue-800">
-                    Data Analytics
-                  </Badge>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <BookOpen className="h-8 w-8 text-blue-600" />
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-green-50 to-green-100">
-              <CardHeader>
-                <Code className="h-12 w-12 text-green-600 mb-4" />
-                <CardTitle className="text-xl">Live Projects & Internships</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Learn by doing. Participants get to work on real-time client projects under the mentorship of our
-                  senior engineers and consultants.
-                </p>
-                <div className="space-y-2">
-                  <Badge variant="secondary" className="bg-green-200 text-green-800">
-                    Real Client Projects
-                  </Badge>
-                  <Badge variant="secondary" className="bg-green-200 text-green-800">
-                    Expert Mentorship
-                  </Badge>
-                  <Badge variant="secondary" className="bg-green-200 text-green-800">
-                    Hands-on Experience
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-purple-50 to-purple-100">
-              <CardHeader>
-                <Award className="h-12 w-12 text-purple-600 mb-4" />
-                <CardTitle className="text-xl">Certification & Career Guidance</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Earn recognition for your skills and receive personalized career mentoring to prepare for roles in
-                  digital transformation, cloud, DevOps, marketing tech, and more.
-                </p>
-                <div className="space-y-2">
-                  <Badge variant="secondary" className="bg-purple-200 text-purple-800">
-                    Industry Certifications
-                  </Badge>
-                  <Badge variant="secondary" className="bg-purple-200 text-purple-800">
-                    Career Counseling
-                  </Badge>
-                  <Badge variant="secondary" className="bg-purple-200 text-purple-800">
-                    Interview Preparation
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-orange-50 to-orange-100">
-              <CardHeader>
-                <Briefcase className="h-12 w-12 text-orange-600 mb-4" />
-                <CardTitle className="text-xl">Job-Ready Pathways</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">
-                  Top-performing candidates may be offered full-time roles at Equuleus Technologies — turning learning
-                  into lasting opportunity.
-                </p>
-                <div className="space-y-2">
-                  <Badge variant="secondary" className="bg-orange-200 text-orange-800">
-                    Direct Placement
-                  </Badge>
-                  <Badge variant="secondary" className="bg-orange-200 text-orange-800">
-                    Full-time Opportunities
-                  </Badge>
-                  <Badge variant="secondary" className="bg-orange-200 text-orange-800">
-                    Career Growth
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Who Can Apply */}
-        <section className="mb-20">
-          <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
-            <CardHeader>
-              <Users className="h-12 w-12 text-green-600 mb-4 mx-auto" />
-              <CardTitle className="text-3xl text-center">Who Can Apply?</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Final Year Students & Fresh Graduates</h4>
-                      <p className="text-gray-600 text-sm">In IT, Computer Science, or related fields</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Early-Career Professionals</h4>
-                      <p className="text-gray-600 text-sm">Seeking to switch or grow in the tech industry</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Working Professionals</h4>
-                      <p className="text-gray-600 text-sm">Looking to upskill in emerging technologies</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Educational Institutions</h4>
-                      <p className="text-gray-600 text-sm">Looking to partner for campus-to-corporate training</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Why Choose Equuleus Academy */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
-              Why Choose Us
-            </Badge>
-            <h2 className="text-3xl font-bold mb-4">Why Choose Equuleus Academy?</h2>
-            <p className="text-xl text-gray-600">The advantages that set us apart</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-blue-50 to-blue-100">
-              <CardHeader>
-                <Target className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <CardTitle>Real-world Exposure</CardTitle>
-              </CardHeader>
-              <CardContent>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Expert Instructors</h3>
                 <p className="text-gray-600">
-                  Work on actual client projects and gain practical experience that employers value
+                  Learn from industry professionals with 15+ years of real-world experience in cutting-edge
+                  technologies.
                 </p>
               </CardContent>
             </Card>
-
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-green-50 to-green-100">
-              <CardHeader>
-                <Users className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <CardTitle>Expert-led Sessions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Learn from industry veterans with 20+ years of collective experience</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-purple-50 to-purple-100">
-              <CardHeader>
-                <Code className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                <CardTitle>Modern Tech Stack</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Training on cutting-edge technologies and industry-standard tools</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-orange-50 to-orange-100">
-              <CardHeader>
-                <TrendingUp className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                <CardTitle>Growth-Oriented Environment</CardTitle>
-              </CardHeader>
-              <CardContent>
+            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Users className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Hands-On Learning</h3>
                 <p className="text-gray-600">
-                  Inclusive culture that fosters learning, collaboration, and personal development
+                  Practical projects and real-world scenarios ensure you gain applicable skills that employers value.
                 </p>
               </CardContent>
             </Card>
-
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-red-50 to-red-100">
-              <CardHeader>
-                <Briefcase className="h-12 w-12 text-red-600 mx-auto mb-4" />
-                <CardTitle>Direct Placement Opportunities</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Top performers get direct job offers at Equuleus Technologies</p>
+            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Award className="h-8 w-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Industry Certification</h3>
+                <p className="text-gray-600">
+                  Earn recognized certifications that validate your skills and enhance your professional credibility.
+                </p>
               </CardContent>
             </Card>
-
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-yellow-50 to-yellow-100">
-              <CardHeader>
-                <Award className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
-                <CardTitle>Industry Recognition</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Earn certifications and credentials recognized across the industry</p>
+            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Clock className="h-8 w-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Flexible Schedule</h3>
+                <p className="text-gray-600">
+                  Choose from weekday, weekend, or online classes that fit your schedule and learning preferences.
+                </p>
               </CardContent>
             </Card>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section>
-          <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-            <CardContent className="py-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Career?</h2>
-              <p className="text-xl mb-8 text-blue-100">Take the first step toward a career that matters</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100 rounded-full">
-                  <Link href="mailto:career@equuleustechnologies.com">Enroll Now</Link>
-                </Button>
+      {/* Course Categories */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Popular Course Categories</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore our comprehensive curriculum covering the most in-demand technology skills in today's market.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center">
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-blue-600 font-bold text-sm">☁️</span>
+                  </div>
+                  Cloud Computing
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Master AWS, Azure, and Google Cloud platforms with hands-on labs and real-world projects.
+                </p>
+                <ul className="text-sm text-gray-500 space-y-2 mb-6">
+                  <li>• AWS Solutions Architect</li>
+                  <li>• Azure DevOps Engineer</li>
+                  <li>• Google Cloud Professional</li>
+                </ul>
                 <Button
-                  size="lg"
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-blue-600 rounded-full bg-transparent"
+                  size="sm"
+                  className="text-blue-600 border-blue-600 hover:bg-blue-50 bg-transparent"
                 >
-                  <Link href="/contact">Partner With Us</Link>
+                  View Courses <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </div>
-              <p className="mt-6 text-blue-100">📧 career@equuleustechnologies.com | Upcoming Batches: Coming Soon</p>
-            </CardContent>
-          </Card>
-        </section>
-      </div>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center">
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-green-600 font-bold text-sm">💻</span>
+                  </div>
+                  Software Development
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Learn modern programming languages and frameworks used by top technology companies.
+                </p>
+                <ul className="text-sm text-gray-500 space-y-2 mb-6">
+                  <li>• Full-Stack JavaScript</li>
+                  <li>• Python & Django</li>
+                  <li>• React & Node.js</li>
+                </ul>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent"
+                >
+                  View Courses <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center">
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-purple-600 font-bold text-sm">📊</span>
+                  </div>
+                  Data Science & AI
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Dive into machine learning, artificial intelligence, and advanced analytics techniques.
+                </p>
+                <ul className="text-sm text-gray-500 space-y-2 mb-6">
+                  <li>• Machine Learning with Python</li>
+                  <li>• Deep Learning & Neural Networks</li>
+                  <li>• Data Visualization</li>
+                </ul>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-purple-600 border-purple-600 hover:bg-purple-50 bg-transparent"
+                >
+                  View Courses <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center">
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-orange-600 font-bold text-sm">🔒</span>
+                  </div>
+                  Cybersecurity
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Protect organizations from cyber threats with comprehensive security training programs.
+                </p>
+                <ul className="text-sm text-gray-500 space-y-2 mb-6">
+                  <li>• Ethical Hacking</li>
+                  <li>• Security Operations Center</li>
+                  <li>• Risk Management</li>
+                </ul>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-orange-600 border-orange-600 hover:bg-orange-50 bg-transparent"
+                >
+                  View Courses <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center">
+                  <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-red-600 font-bold text-sm">⚙️</span>
+                  </div>
+                  DevOps & Infrastructure
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Master modern DevOps practices and infrastructure automation for scalable applications.
+                </p>
+                <ul className="text-sm text-gray-500 space-y-2 mb-6">
+                  <li>• Docker & Kubernetes</li>
+                  <li>• CI/CD Pipelines</li>
+                  <li>• Infrastructure as Code</li>
+                </ul>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-red-600 border-red-600 hover:bg-red-50 bg-transparent"
+                >
+                  View Courses <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center">
+                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-indigo-600 font-bold text-sm">📱</span>
+                  </div>
+                  Mobile Development
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Build native and cross-platform mobile applications for iOS and Android platforms.
+                </p>
+                <ul className="text-sm text-gray-500 space-y-2 mb-6">
+                  <li>• React Native</li>
+                  <li>• Flutter Development</li>
+                  <li>• iOS & Android Native</li>
+                </ul>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-indigo-600 border-indigo-600 hover:bg-indigo-50 bg-transparent"
+                >
+                  View Courses <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Learning Paths */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Structured Learning Paths</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Follow our carefully designed learning paths to master specific technology domains from beginner to expert
+              level.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Play className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl">Beginner Path</CardTitle>
+                <p className="text-gray-600">Perfect for those starting their tech journey</p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Programming Fundamentals</span>
+                    <span className="text-sm text-blue-600 font-medium">4 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Web Development Basics</span>
+                    <span className="text-sm text-blue-600 font-medium">6 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Database Essentials</span>
+                    <span className="text-sm text-blue-600 font-medium">3 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">First Project</span>
+                    <span className="text-sm text-blue-600 font-medium">2 weeks</span>
+                  </div>
+                </div>
+                <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white">Start Learning</Button>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow border-2 border-blue-200">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl">Intermediate Path</CardTitle>
+                <p className="text-gray-600">For developers ready to advance their skills</p>
+                <div className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
+                  Most Popular
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Advanced Frameworks</span>
+                    <span className="text-sm text-green-600 font-medium">8 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Cloud Deployment</span>
+                    <span className="text-sm text-green-600 font-medium">4 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">API Development</span>
+                    <span className="text-sm text-green-600 font-medium">5 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Portfolio Project</span>
+                    <span className="text-sm text-green-600 font-medium">4 weeks</span>
+                  </div>
+                </div>
+                <Button className="w-full mt-6 bg-green-600 hover:bg-green-700 text-white">Advance Your Skills</Button>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl">Expert Path</CardTitle>
+                <p className="text-gray-600">Master advanced concepts and leadership skills</p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">System Architecture</span>
+                    <span className="text-sm text-purple-600 font-medium">6 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Performance Optimization</span>
+                    <span className="text-sm text-purple-600 font-medium">4 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Team Leadership</span>
+                    <span className="text-sm text-purple-600 font-medium">3 weeks</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Capstone Project</span>
+                    <span className="text-sm text-purple-600 font-medium">8 weeks</span>
+                  </div>
+                </div>
+                <Button className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white">Become an Expert</Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Start Learning?</h2>
+            <p className="text-xl text-blue-100 mb-8">
+              Join thousands of professionals who have advanced their careers through Equuleus Academy. Start your
+              journey today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-4 font-semibold"
+              >
+                <Link href="/contact">Enroll Today</Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-blue-600 rounded-full px-8 py-4 bg-transparent"
+              >
+                <Link href="/contact">Request Info</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

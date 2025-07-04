@@ -1,23 +1,16 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
-  Zap,
-  Globe,
-  Award,
-  Users,
   Cloud,
   Shield,
-  BarChart3,
+  Users,
+  Target,
+  Zap,
+  Database,
+  Globe,
   Smartphone,
-  Search,
-  MousePointer,
-  Share2,
-  Mail,
-  Code,
-  Server,
-  HeadphonesIcon,
-  CheckCircle,
+  BarChart3,
+  Settings,
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
@@ -25,373 +18,311 @@ import Image from "next/image"
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
-            Our Services
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive IT solutions designed to accelerate your digital transformation journey
-          </p>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 lg:py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Our{" "}
+              <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Services
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              Comprehensive technology solutions designed to accelerate your digital transformation journey and drive
+              sustainable business growth.
+            </p>
+          </div>
         </div>
+      </section>
 
-        {/* Services Hero Image */}
-        <section className="mb-20">
-          <div className="relative">
-            <Image
-              src="/images/digital-travel.jpg"
-              alt="Global digital solutions and connectivity"
-              width={1200}
-              height={400}
-              className="w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/60 rounded-3xl flex items-center justify-center">
-              <div className="text-center text-white">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">Transforming Businesses Globally</h2>
-                <p className="text-xl md:text-2xl opacity-90">Innovative solutions for the digital age</p>
+      {/* Main Services */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 mb-20">
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                  <Zap className="h-6 w-6 text-blue-600" />
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900">Digital Transformation</h2>
               </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Modernize your business processes and technology infrastructure with our comprehensive digital
+                transformation services. We help organizations embrace digital-first strategies that drive efficiency,
+                innovation, and competitive advantage.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center space-x-3">
+                  <Cloud className="h-5 w-5 text-blue-600" />
+                  <span className="text-gray-700">Cloud Migration</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Database className="h-5 w-5 text-blue-600" />
+                  <span className="text-gray-700">Data Analytics</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Settings className="h-5 w-5 text-blue-600" />
+                  <span className="text-gray-700">Process Automation</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Smartphone className="h-5 w-5 text-blue-600" />
+                  <span className="text-gray-700">Mobile Solutions</span>
+                </div>
+              </div>
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full">
+                <Link href="/contact">Learn More</Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <Image
+                src="/images/cybersecurity-data.jpg"
+                alt="Digital transformation and cybersecurity"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-xl"
+              />
             </div>
           </div>
-        </section>
 
-        {/* Digital Transformation */}
-        <section className="mb-20">
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200 hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <div className="flex items-center mb-4">
-                <Zap className="h-12 w-12 text-blue-600 mr-4" />
-                <div>
-                  <CardTitle className="text-3xl">Digital Transformation</CardTitle>
-                  <CardDescription className="text-lg">
-                    Empowering businesses to evolve, innovate, and thrive in the digital age
-                  </CardDescription>
+          <div className="grid lg:grid-cols-2 gap-16 mb-20">
+            <div className="lg:order-2">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <Shield className="h-6 w-6 text-green-600" />
                 </div>
+                <h2 className="text-3xl font-bold text-gray-900">IT Managed Services</h2>
               </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Our Digital Transformation services help organizations modernize their operations, enhance customer
-                experiences, and drive growth through cutting-edge technologies. We bring together cloud computing, data
-                analytics, automation, and AI to create agile, scalable, and future-ready digital ecosystems.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Comprehensive IT support and infrastructure management services that ensure your technology systems run
+                smoothly, securely, and efficiently. Focus on your core business while we handle your IT needs.
               </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-start">
-                  <Cloud className="h-6 w-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Cloud Migration & Modernization</h4>
-                    <p className="text-sm text-gray-600">
-                      Seamlessly transition legacy systems to secure, scalable cloud platforms
-                    </p>
-                  </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center space-x-3">
+                  <Shield className="h-5 w-5 text-green-600" />
+                  <span className="text-gray-700">24/7 Monitoring</span>
                 </div>
-                <div className="flex items-start">
-                  <BarChart3 className="h-6 w-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Data-Driven Decision Making</h4>
-                    <p className="text-sm text-gray-600">
-                      Leverage advanced analytics and BI tools for actionable business insights
-                    </p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Database className="h-5 w-5 text-green-600" />
+                  <span className="text-gray-700">Backup & Recovery</span>
                 </div>
-                <div className="flex items-start">
-                  <Smartphone className="h-6 w-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Customer Experience Transformation</h4>
-                    <p className="text-sm text-gray-600">
-                      Deliver personalized, omni-channel experiences using digital tools
-                    </p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Settings className="h-5 w-5 text-green-600" />
+                  <span className="text-gray-700">System Maintenance</span>
                 </div>
-                <div className="flex items-start">
-                  <Code className="h-6 w-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Enterprise Application Modernization</h4>
-                    <p className="text-sm text-gray-600">
-                      Upgrade and integrate core business systems to boost agility
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Shield className="h-6 w-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Digital Risk & Compliance Management</h4>
-                    <p className="text-sm text-gray-600">
-                      Integrate security, governance, and compliance into your digital roadmap
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Zap className="h-6 w-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">GRC Process Automation</h4>
-                    <p className="text-sm text-gray-600">
-                      Streamline workflows with AI and RPA to reduce costs and improve efficiency
-                    </p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Globe className="h-5 w-5 text-green-600" />
+                  <span className="text-gray-700">Network Security</span>
                 </div>
               </div>
-
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full">
-                <Link href="/contact" className="flex items-center">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* IT Managed Services */}
-        <section className="mb-20">
-          <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200 hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <div className="flex items-center mb-4">
-                <Globe className="h-12 w-12 text-green-600 mr-4" />
-                <div>
-                  <CardTitle className="text-3xl">IT Managed Services</CardTitle>
-                  <CardDescription className="text-lg">
-                    Reliable. Scalable. Proactive. We manage your IT so you can focus on your business
-                  </CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Our IT Managed Services provide end-to-end support for enterprise applications and infrastructure,
-                ensuring seamless operations, minimal downtime, and maximum performance. With a focus on proactive
-                monitoring, automation, and continuous improvement, we help businesses reduce IT complexity and enhance
-                operational efficiency.
-              </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-start">
-                  <Code className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Application Management & Support</h4>
-                    <p className="text-sm text-gray-600">
-                      End-to-end lifecycle management with monitoring and performance tuning
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Server className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Infrastructure Management</h4>
-                    <p className="text-sm text-gray-600">
-                      24x7 monitoring for on-prem, cloud, and hybrid infrastructures
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Cloud className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Cloud Operations (CloudOps)</h4>
-                    <p className="text-sm text-gray-600">Optimized management with auto-scaling and cost control</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <HeadphonesIcon className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">IT Service Desk (L1/L2/L3)</h4>
-                    <p className="text-sm text-gray-600">Multi-tiered support aligned with ITIL best practices</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Shield className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Security & Compliance Monitoring</h4>
-                    <p className="text-sm text-gray-600">Real-time threat detection and compliance reporting</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Disaster Recovery & Business Continuity</h4>
-                    <p className="text-sm text-gray-600">Resilient architecture and backup solutions</p>
-                  </div>
-                </div>
-              </div>
-
               <Button className="bg-green-600 hover:bg-green-700 text-white rounded-full">
-                <Link href="/contact" className="flex items-center">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                <Link href="/contact">Get Support</Link>
               </Button>
-            </CardContent>
-          </Card>
-        </section>
+            </div>
+            <div className="lg:order-1 relative">
+              <Image
+                src="/images/business-analytics.jpg"
+                alt="IT managed services and business analytics"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-xl"
+              />
+            </div>
+          </div>
 
-        {/* Digital Marketing */}
-        <section className="mb-20">
-          <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200 hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <div className="flex items-center mb-4">
-                <Award className="h-12 w-12 text-purple-600 mr-4" />
-                <div>
-                  <CardTitle className="text-3xl">Digital Marketing</CardTitle>
-                  <CardDescription className="text-lg">
-                    Accelerate your brand growth with data-driven digital marketing strategies
-                  </CardDescription>
+          <div className="grid lg:grid-cols-2 gap-16 mb-20">
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                  <Target className="h-6 w-6 text-purple-600" />
                 </div>
+                <h2 className="text-3xl font-bold text-gray-900">Digital Marketing</h2>
               </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                We help businesses connect, engage, and convert across the digital landscape with result-oriented
-                marketing solutions. From brand awareness to lead generation, our tailored strategies are built to drive
-                measurable outcomes and long-term success.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Data-driven digital marketing strategies that enhance your online presence, engage your target audience,
+                and drive measurable business results across all digital channels.
               </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-start">
-                  <Search className="h-6 w-6 text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Search Engine Optimization (SEO)</h4>
-                    <p className="text-sm text-gray-600">
-                      Improve visibility and organic traffic with comprehensive SEO practices
-                    </p>
-                  </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center space-x-3">
+                  <BarChart3 className="h-5 w-5 text-purple-600" />
+                  <span className="text-gray-700">SEO & SEM</span>
                 </div>
-                <div className="flex items-start">
-                  <MousePointer className="h-6 w-6 text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Pay-Per-Click Advertising (PPC)</h4>
-                    <p className="text-sm text-gray-600">
-                      Drive targeted leads through Google Ads and social media campaigns
-                    </p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Globe className="h-5 w-5 text-purple-600" />
+                  <span className="text-gray-700">Social Media</span>
                 </div>
-                <div className="flex items-start">
-                  <Share2 className="h-6 w-6 text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Social Media Marketing (SMM)</h4>
-                    <p className="text-sm text-gray-600">
-                      Build strong digital presence on Facebook, Instagram, LinkedIn, and X
-                    </p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Target className="h-5 w-5 text-purple-600" />
+                  <span className="text-gray-700">Content Marketing</span>
                 </div>
-                <div className="flex items-start">
-                  <Award className="h-6 w-6 text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Content Marketing</h4>
-                    <p className="text-sm text-gray-600">
-                      Engage audiences with high-impact content that informs and converts
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Email Marketing & Automation</h4>
-                    <p className="text-sm text-gray-600">Deliver personalized messaging and nurture campaigns</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <BarChart3 className="h-6 w-6 text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Web Analytics & Conversion Optimization</h4>
-                    <p className="text-sm text-gray-600">
-                      Turn data into strategy with performance tracking and A/B testing
-                    </p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Smartphone className="h-5 w-5 text-purple-600" />
+                  <span className="text-gray-700">Email Campaigns</span>
                 </div>
               </div>
-
               <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full">
-                <Link href="/contact" className="flex items-center">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                <Link href="/contact">Boost Your Presence</Link>
               </Button>
-            </CardContent>
-          </Card>
-        </section>
+            </div>
+            <div className="relative">
+              <Image
+                src="/images/digital-travel.jpg"
+                alt="Digital marketing and online presence"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-xl"
+              />
+            </div>
+          </div>
 
-        {/* Staff Augmentation */}
-        <section className="mb-20">
-          <Card className="bg-gradient-to-r from-orange-50 to-red-50 border-orange-200 hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <div className="flex items-center mb-4">
-                <Users className="h-12 w-12 text-orange-600 mr-4" />
-                <div>
-                  <CardTitle className="text-3xl">Staff Augmentation</CardTitle>
-                  <CardDescription className="text-lg">
-                    Scale faster with the right talent, exactly when you need it
-                  </CardDescription>
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div className="lg:order-2">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                  <Users className="h-6 w-6 text-orange-600" />
                 </div>
+                <h2 className="text-3xl font-bold text-gray-900">Staff Augmentation</h2>
               </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Our Staff Augmentation services provide you with skilled professionals to seamlessly extend your
-                in-house teams, enabling faster delivery, improved flexibility, and reduced hiring overhead. Whether you
-                need short-term expertise or long-term support, we help you access top-tier talent across technologies
-                and domains.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Scale your team with skilled professionals who integrate seamlessly with your existing workforce. Access
+                top talent without the overhead of permanent hiring.
               </p>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="flex items-start">
-                  <Code className="h-6 w-6 text-orange-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">IT & Engineering Talent on Demand</h4>
-                    <p className="text-sm text-gray-600">
-                      Certified professionals in development, DevOps, cloud, testing, cybersecurity
-                    </p>
-                  </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center space-x-3">
+                  <Users className="h-5 w-5 text-orange-600" />
+                  <span className="text-gray-700">Software Developers</span>
                 </div>
-                <div className="flex items-start">
-                  <Globe className="h-6 w-6 text-orange-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Flexible Engagement Models</h4>
-                    <p className="text-sm text-gray-600">
-                      Onsite, offshore, hybrid, or remote—scale as per project needs
-                    </p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Settings className="h-5 w-5 text-orange-600" />
+                  <span className="text-gray-700">DevOps Engineers</span>
                 </div>
-                <div className="flex items-start">
-                  <Award className="h-6 w-6 text-orange-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Domain-Specific Experts</h4>
-                    <p className="text-sm text-gray-600">
-                      Specialists with experience in BFSI, Telecom, Healthcare, Retail, Manufacturing
-                    </p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <BarChart3 className="h-5 w-5 text-orange-600" />
+                  <span className="text-gray-700">Data Scientists</span>
                 </div>
-                <div className="flex items-start">
-                  <Zap className="h-6 w-6 text-orange-600 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Quick Onboarding & Ramp-Up</h4>
-                    <p className="text-sm text-gray-600">Rapid resource deployment with proven recruitment processes</p>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Target className="h-5 w-5 text-orange-600" />
+                  <span className="text-gray-700">Project Managers</span>
                 </div>
               </div>
-
               <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full">
-                <Link href="/contact" className="flex items-center">
-                  Find Talent <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                <Link href="/contact">Find Talent</Link>
               </Button>
-            </CardContent>
-          </Card>
-        </section>
+            </div>
+            <div className="lg:order-1 relative">
+              <Image
+                src="/images/cloud-computing.jpg"
+                alt="Staff augmentation and team collaboration"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="text-center">
-          <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-            <CardContent className="py-12">
-              <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-              <p className="text-xl mb-8 text-blue-100">
-                Let's discuss how our services can accelerate your digital transformation
-              </p>
-              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100 rounded-full">
+      {/* Additional Services */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Additional Capabilities</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Specialized services to address your unique business challenges and technology requirements.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <Cloud className="h-6 w-6 text-blue-600" />
+                </div>
+                <CardTitle className="text-xl">Cloud Architecture</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Design and implement scalable, secure cloud infrastructure solutions tailored to your business needs.
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-blue-600 border-blue-600 hover:bg-blue-50 bg-transparent"
+                >
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <Database className="h-6 w-6 text-green-600" />
+                </div>
+                <CardTitle className="text-xl">Data Engineering</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Build robust data pipelines and analytics platforms to unlock insights from your business data.
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent"
+                >
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                  <Smartphone className="h-6 w-6 text-purple-600" />
+                </div>
+                <CardTitle className="text-xl">Mobile Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Create engaging mobile applications for iOS and Android that deliver exceptional user experiences.
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-purple-600 border-purple-600 hover:bg-purple-50 bg-transparent"
+                >
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <p className="text-xl text-blue-100 mb-8">
+              Let's discuss how our services can help accelerate your digital transformation and drive business growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-4 font-semibold"
+              >
                 <Link href="/contact">Contact Us Today</Link>
               </Button>
-            </CardContent>
-          </Card>
-        </section>
-      </div>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-blue-600 rounded-full px-8 py-4 bg-transparent"
+              >
+                <Link href="/about">Learn About Us</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
