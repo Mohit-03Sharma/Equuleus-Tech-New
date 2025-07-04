@@ -5,6 +5,30 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function HomePage() {
+  const testimonials = [
+    {
+      name: "Rajesh Kumar",
+      position: "CTO, TechVision Solutions",
+      review:
+        "Equuleus Technologies completely transformed our legacy infrastructure. Their cloud migration strategy reduced our operational costs by 40% while improving system reliability. Outstanding expertise!",
+      rating: 5,
+    },
+    {
+      name: "Priya Sharma",
+      position: "CEO, InnovateCorp",
+      review:
+        "Working with Equuleus has been a game-changer for our digital marketing efforts. Their data-driven approach increased our online conversions by 65% in just 6 months. Highly recommended!",
+      rating: 5,
+    },
+    {
+      name: "Michael Chen",
+      position: "Operations Director, GlobalTech",
+      review:
+        "The staff augmentation services provided by Equuleus helped us scale our development team efficiently. Their professionals integrated seamlessly and delivered exceptional results on time.",
+      rating: 5,
+    },
+  ]
+
   return (
     <div className="min-h-screen">
       {/* Hero Section - Clavax Style */}
@@ -64,14 +88,14 @@ export default function HomePage() {
             </div>
 
             <div className="relative lg:block hidden">
-              {/* Professional person with technology - Replace with actual image */}
+              {/* Cloud Computing Image */}
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=600&width=500"
-                  alt="Professional with technology"
+                  src="/images/cloud-computing.jpg"
+                  alt="Cloud computing and digital transformation"
                   width={500}
-                  height={600}
-                  className="rounded-2xl"
+                  height={500}
+                  className="rounded-2xl shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent rounded-2xl"></div>
               </div>
@@ -267,8 +291,8 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=600&width=500"
-                  alt="Team collaboration"
+                  src="/images/business-analytics.jpg"
+                  alt="Business analytics and data-driven solutions"
                   width={500}
                   height={600}
                   className="rounded-3xl shadow-2xl"
@@ -301,23 +325,27 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="bg-white border-0 shadow-lg hover:shadow-2xl transition-shadow">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-2xl transition-shadow">
                 <CardContent className="p-8">
                   <div className="flex mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    "Equuleus Technologies transformed our digital infrastructure completely. Their expertise and
-                    dedication are unmatched."
-                  </p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.review}"</p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mr-4 flex items-center justify-center">
+                      <span className="text-white font-semibold text-lg">
+                        {testimonial.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </span>
+                    </div>
                     <div>
-                      <p className="font-semibold">Client Name</p>
-                      <p className="text-sm text-gray-600">CEO, Company Name</p>
+                      <p className="font-semibold">{testimonial.name}</p>
+                      <p className="text-sm text-gray-600">{testimonial.position}</p>
                     </div>
                   </div>
                 </CardContent>

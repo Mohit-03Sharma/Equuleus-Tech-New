@@ -11,7 +11,7 @@ export default function AboutPage() {
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="bg-orange-100 text-orange-700 mb-4">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
             About Us
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">About Equuleus Technologies</h1>
@@ -43,30 +43,14 @@ export default function AboutPage() {
                   measurable impact and sustainable growth.
                 </p>
               </div>
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white rounded-full px-8 mt-6">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 mt-6">
                 <Link href="/contact" className="flex items-center">
                   Work With Us <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
-            <div className="relative">
-              <Image
-                src="/placeholder.svg?height=400&width=500"
-                alt="Digital transformation concept"
-                width={500}
-                height={400}
-                className="rounded-3xl shadow-2xl"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Mission & Vision */}
-        <section className="mb-20">
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200 hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <Target className="h-12 w-12 text-orange-600 mb-4" />
+            >
+                <Target className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle className="text-2xl">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
@@ -77,9 +61,9 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200 hover:shadow-xl transition-shadow">
+            <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200 hover:shadow-xl transition-shadow">
               <CardHeader>
-                <Eye className="h-12 w-12 text-amber-600 mb-4" />
+                <Eye className="h-12 w-12 text-green-600 mb-4" />
                 <CardTitle className="text-2xl">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
@@ -96,7 +80,7 @@ export default function AboutPage() {
         {/* Leadership */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="bg-orange-100 text-orange-700 mb-4">
+            <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
               Leadership
             </Badge>
             <h2 className="text-3xl font-bold mb-4">Leadership Team</h2>
@@ -105,9 +89,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <Card className="bg-gradient-to-r from-orange-50 to-amber-50 border-orange-200">
+          <Card className="bg-gradient-to-r from-blue-50 to-green-50 border-blue-200">
             <CardHeader>
-              <Users className="h-12 w-12 text-orange-600 mb-4 mx-auto" />
+              <Users className="h-12 w-12 text-blue-600 mb-4 mx-auto" />
               <CardTitle className="text-2xl text-center">Founding Team</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
@@ -135,7 +119,7 @@ export default function AboutPage() {
         {/* Values */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="bg-orange-100 text-orange-700 mb-4">
+            <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
               Our Values
             </Badge>
             <h2 className="text-3xl font-bold mb-4">The Principles That Guide Us</h2>
@@ -143,9 +127,9 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-orange-50 to-orange-100">
+            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-blue-50 to-blue-100">
               <CardHeader>
-                <div className="mx-auto bg-orange-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
+                <div className="mx-auto bg-blue-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
                   <CheckCircle className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl">Trust</CardTitle>
@@ -157,9 +141,9 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-amber-50 to-amber-100">
+            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-green-50 to-green-100">
               <CardHeader>
-                <div className="mx-auto bg-amber-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
+                <div className="mx-auto bg-green-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
                   <CheckCircle className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl">Adaptability</CardTitle>
@@ -172,9 +156,9 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-yellow-50 to-yellow-100">
+            <Card className="text-center hover:shadow-xl transition-shadow bg-gradient-to-br from-purple-50 to-purple-100">
               <CardHeader>
-                <div className="mx-auto bg-yellow-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
+                <div className="mx-auto bg-purple-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4">
                   <CheckCircle className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl">Excellence</CardTitle>
@@ -190,24 +174,20 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <section className="text-center">
-          <Card className="bg-gradient-to-r from-orange-600 to-amber-600 text-white">
+          <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
             <CardContent className="py-12">
               <h2 className="text-3xl font-bold mb-4">Ready to Work Together?</h2>
-              <p className="text-xl mb-8 text-orange-100">
+              <p className="text-xl mb-8 text-blue-100">
                 Let's discuss how we can help transform your business with our expertise and experience
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-white text-orange-600 hover:bg-gray-100 rounded-full"
-                >
+                <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100 rounded-full">
                   <Link href="/contact">Get In Touch</Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-orange-600 rounded-full"
+                  className="border-2 border-white text-white hover:bg-white hover:text-blue-600 rounded-full bg-transparent"
                 >
                   <Link href="/services">Our Services</Link>
                 </Button>

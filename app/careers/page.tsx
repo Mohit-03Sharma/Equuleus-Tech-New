@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Users, TrendingUp, Heart, Target, Laptop, Award } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function CareersPage() {
   return (
@@ -10,21 +11,40 @@ export default function CareersPage() {
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="bg-orange-100 text-orange-700 mb-4">
+          <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
             Careers
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Build the Future with Us</h1>
-          <p className="text-2xl text-orange-600 font-semibold mb-4">Join Our Team of Passionate Innovators</p>
+          <p className="text-2xl text-blue-600 font-semibold mb-4">Join Our Team of Passionate Innovators</p>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             At Equuleus Technologies, we're not just building digital solutions — we're building a team of passionate,
             curious, and forward-thinking individuals who are driven by purpose and powered by innovation.
           </p>
         </div>
 
+        {/* Careers Hero Image */}
+        <section className="mb-20">
+          <div className="relative">
+            <Image
+              src="/images/business-analytics.jpg"
+              alt="Professional team collaboration and career growth"
+              width={1200}
+              height={400}
+              className="w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-green-900/60 rounded-3xl flex items-center justify-center">
+              <div className="text-center text-white">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4">Your Career. Our Mission.</h2>
+                <p className="text-xl md:text-2xl opacity-90">Where talent meets opportunity and innovation thrives</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Work With Us */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="bg-orange-100 text-orange-700 mb-4">
+            <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
               Why Join Us
             </Badge>
             <h2 className="text-3xl font-bold mb-4">Why Work With Us?</h2>
@@ -32,9 +52,9 @@ export default function CareersPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-orange-50 to-orange-100">
+            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-blue-50 to-blue-100">
               <CardHeader>
-                <TrendingUp className="h-12 w-12 text-orange-600 mb-4" />
+                <TrendingUp className="h-12 w-12 text-blue-600 mb-4" />
                 <CardTitle>Growth From Day One</CardTitle>
               </CardHeader>
               <CardContent>
@@ -45,9 +65,9 @@ export default function CareersPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-amber-50 to-amber-100">
+            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-green-50 to-green-100">
               <CardHeader>
-                <Users className="h-12 w-12 text-amber-600 mb-4" />
+                <Users className="h-12 w-12 text-green-600 mb-4" />
                 <CardTitle>Collaborative Culture</CardTitle>
               </CardHeader>
               <CardContent>
@@ -58,9 +78,9 @@ export default function CareersPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-yellow-50 to-yellow-100">
+            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-purple-50 to-purple-100">
               <CardHeader>
-                <Award className="h-12 w-12 text-yellow-600 mb-4" />
+                <Award className="h-12 w-12 text-purple-600 mb-4" />
                 <CardTitle>Leadership You Can Learn From</CardTitle>
               </CardHeader>
               <CardContent>
@@ -71,9 +91,9 @@ export default function CareersPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-red-50 to-red-100">
+            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-orange-50 to-orange-100">
               <CardHeader>
-                <Laptop className="h-12 w-12 text-red-600 mb-4" />
+                <Laptop className="h-12 w-12 text-orange-600 mb-4" />
                 <CardTitle>Flexibility & Trust</CardTitle>
               </CardHeader>
               <CardContent>
@@ -84,9 +104,9 @@ export default function CareersPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-orange-50 to-amber-100">
+            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-red-50 to-red-100">
               <CardHeader>
-                <Target className="h-12 w-12 text-orange-600 mb-4" />
+                <Target className="h-12 w-12 text-red-600 mb-4" />
                 <CardTitle>Make a Real Impact</CardTitle>
               </CardHeader>
               <CardContent>
@@ -97,9 +117,9 @@ export default function CareersPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-amber-50 to-yellow-100">
+            <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-yellow-50 to-yellow-100">
               <CardHeader>
-                <Heart className="h-12 w-12 text-amber-600 mb-4" />
+                <Heart className="h-12 w-12 text-yellow-600 mb-4" />
                 <CardTitle>Purpose-Driven Work</CardTitle>
               </CardHeader>
               <CardContent>
@@ -115,7 +135,7 @@ export default function CareersPage() {
         {/* Current Openings */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="bg-orange-100 text-orange-700 mb-4">
+            <Badge variant="secondary" className="bg-blue-100 text-blue-700 mb-4">
               Open Positions
             </Badge>
             <h2 className="text-3xl font-bold mb-4">Current Openings</h2>
@@ -130,7 +150,7 @@ export default function CareersPage() {
                     <CardTitle className="text-xl">Senior Full Stack Developer</CardTitle>
                     <CardDescription className="text-lg">Digital Transformation Team</CardDescription>
                   </div>
-                  <Badge variant="secondary" className="bg-orange-100 text-orange-700">
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-700">
                     Full-time
                   </Badge>
                 </div>
@@ -141,23 +161,23 @@ export default function CareersPage() {
                   Work with React, Node.js, cloud platforms, and help clients modernize their digital presence.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline" className="border-orange-200 text-orange-700">
+                  <Badge variant="outline" className="border-blue-200 text-blue-700">
                     React
                   </Badge>
-                  <Badge variant="outline" className="border-orange-200 text-orange-700">
+                  <Badge variant="outline" className="border-blue-200 text-blue-700">
                     Node.js
                   </Badge>
-                  <Badge variant="outline" className="border-orange-200 text-orange-700">
+                  <Badge variant="outline" className="border-blue-200 text-blue-700">
                     AWS
                   </Badge>
-                  <Badge variant="outline" className="border-orange-200 text-orange-700">
+                  <Badge variant="outline" className="border-blue-200 text-blue-700">
                     TypeScript
                   </Badge>
-                  <Badge variant="outline" className="border-orange-200 text-orange-700">
+                  <Badge variant="outline" className="border-blue-200 text-blue-700">
                     MongoDB
                   </Badge>
                 </div>
-                <Button className="bg-orange-600 hover:bg-orange-700 text-white rounded-full">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full">
                   <Link href="mailto:careers@equuleustechnologies.com?subject=Senior Full Stack Developer Application">
                     Apply Now
                   </Link>
@@ -172,7 +192,7 @@ export default function CareersPage() {
                     <CardTitle className="text-xl">DevOps Engineer</CardTitle>
                     <CardDescription className="text-lg">Infrastructure & Operations</CardDescription>
                   </div>
-                  <Badge variant="secondary" className="bg-amber-100 text-amber-700">
+                  <Badge variant="secondary" className="bg-green-100 text-green-700">
                     Full-time
                   </Badge>
                 </div>
@@ -183,23 +203,23 @@ export default function CareersPage() {
                   cloud platforms, and automation tools to enable seamless deployments and operations.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline" className="border-amber-200 text-amber-700">
+                  <Badge variant="outline" className="border-green-200 text-green-700">
                     Docker
                   </Badge>
-                  <Badge variant="outline" className="border-amber-200 text-amber-700">
+                  <Badge variant="outline" className="border-green-200 text-green-700">
                     Kubernetes
                   </Badge>
-                  <Badge variant="outline" className="border-amber-200 text-amber-700">
+                  <Badge variant="outline" className="border-green-200 text-green-700">
                     Jenkins
                   </Badge>
-                  <Badge variant="outline" className="border-amber-200 text-amber-700">
+                  <Badge variant="outline" className="border-green-200 text-green-700">
                     Terraform
                   </Badge>
-                  <Badge variant="outline" className="border-amber-200 text-amber-700">
+                  <Badge variant="outline" className="border-green-200 text-green-700">
                     AWS/Azure
                   </Badge>
                 </div>
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white rounded-full">
+                <Button className="bg-green-600 hover:bg-green-700 text-white rounded-full">
                   <Link href="mailto:careers@equuleustechnologies.com?subject=DevOps Engineer Application">
                     Apply Now
                   </Link>
@@ -214,7 +234,7 @@ export default function CareersPage() {
                     <CardTitle className="text-xl">Digital Marketing Specialist</CardTitle>
                     <CardDescription className="text-lg">Marketing & Growth</CardDescription>
                   </div>
-                  <Badge variant="secondary" className="bg-yellow-100 text-yellow-700">
+                  <Badge variant="secondary" className="bg-purple-100 text-purple-700">
                     Full-time
                   </Badge>
                 </div>
@@ -225,23 +245,23 @@ export default function CareersPage() {
                   media, content marketing, and analytics to deliver measurable results and growth.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="outline" className="border-yellow-200 text-yellow-700">
+                  <Badge variant="outline" className="border-purple-200 text-purple-700">
                     SEO
                   </Badge>
-                  <Badge variant="outline" className="border-yellow-200 text-yellow-700">
+                  <Badge variant="outline" className="border-purple-200 text-purple-700">
                     Google Ads
                   </Badge>
-                  <Badge variant="outline" className="border-yellow-200 text-yellow-700">
+                  <Badge variant="outline" className="border-purple-200 text-purple-700">
                     Social Media
                   </Badge>
-                  <Badge variant="outline" className="border-yellow-200 text-yellow-700">
+                  <Badge variant="outline" className="border-purple-200 text-purple-700">
                     Analytics
                   </Badge>
-                  <Badge variant="outline" className="border-yellow-200 text-yellow-700">
+                  <Badge variant="outline" className="border-purple-200 text-purple-700">
                     Content Strategy
                   </Badge>
                 </div>
-                <Button className="bg-yellow-600 hover:bg-yellow-700 text-white rounded-full">
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full">
                   <Link href="mailto:careers@equuleustechnologies.com?subject=Digital Marketing Specialist Application">
                     Apply Now
                   </Link>
@@ -253,7 +273,7 @@ export default function CareersPage() {
 
         {/* Application Process */}
         <section className="mb-20">
-          <Card className="bg-gradient-to-r from-orange-50 to-amber-50 border-orange-200">
+          <Card className="bg-gradient-to-r from-blue-50 to-green-50 border-blue-200">
             <CardHeader>
               <CardTitle className="text-3xl text-center">Application Process</CardTitle>
               <CardDescription className="text-lg text-center">
@@ -263,29 +283,29 @@ export default function CareersPage() {
             <CardContent>
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="font-bold text-orange-600">1</span>
+                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="font-bold text-blue-600">1</span>
                   </div>
                   <h4 className="font-semibold mb-2">Submit Application</h4>
                   <p className="text-sm text-gray-600">Send your resume and cover letter to our careers email</p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-amber-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="font-bold text-amber-600">2</span>
+                  <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="font-bold text-green-600">2</span>
                   </div>
                   <h4 className="font-semibold mb-2">Initial Screening</h4>
                   <p className="text-sm text-gray-600">Phone/video call to discuss your background and interests</p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="font-bold text-yellow-600">3</span>
+                  <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="font-bold text-purple-600">3</span>
                   </div>
                   <h4 className="font-semibold mb-2">Technical Interview</h4>
                   <p className="text-sm text-gray-600">Demonstrate your skills through practical exercises</p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="font-bold text-red-600">4</span>
+                  <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="font-bold text-orange-600">4</span>
                   </div>
                   <h4 className="font-semibold mb-2">Final Interview</h4>
                   <p className="text-sm text-gray-600">Meet the team and discuss your role and growth path</p>
@@ -297,16 +317,16 @@ export default function CareersPage() {
 
         {/* CTA Section */}
         <section>
-          <Card className="bg-gradient-to-r from-orange-600 to-amber-600 text-white">
+          <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
             <CardContent className="py-12 text-center">
               <h2 className="text-3xl font-bold mb-4">Ready to Join Our Team?</h2>
-              <p className="text-xl mb-8 text-orange-100">
+              <p className="text-xl mb-8 text-blue-100">
                 Send us your resume and let's start a conversation about your future with us
               </p>
-              <Button size="lg" variant="secondary" className="bg-white text-orange-600 hover:bg-gray-100 rounded-full">
+              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100 rounded-full">
                 <Link href="mailto:careers@equuleustechnologies.com">Send Your Resume</Link>
               </Button>
-              <p className="mt-6 text-orange-100">📧 careers@equuleustechnologies.com</p>
+              <p className="mt-6 text-blue-100">📧 careers@equuleustechnologies.com</p>
             </CardContent>
           </Card>
         </section>

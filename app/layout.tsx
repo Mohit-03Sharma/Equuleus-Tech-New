@@ -23,7 +23,7 @@ function Navigation() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 border-b border-gray-100 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-28">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center space-x-4">
             <Image
               src="/images/equuleus-logo.jpg"
               alt="Equuleus Technologies Logo"
@@ -31,6 +31,12 @@ function Navigation() {
               height={120}
               className="h-24 w-auto"
             />
+            <div className="hidden sm:block">
+              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                Equuleus
+                <span className="block text-xl lg:text-2xl font-semibold text-blue-600">Technologies</span>
+              </h1>
+            </div>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -68,18 +74,9 @@ function Footer() {
     <footer className="bg-slate-900 text-white">
       <div className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-2">
-              <div className="mb-6">
-                <Image
-                  src="/images/equuleus-logo.jpg"
-                  alt="Equuleus Technologies Logo"
-                  width={360}
-                  height={120}
-                  className="h-20 w-auto filter brightness-0 invert"
-                  priority
-                />
-              </div>
+              
               <p className="text-gray-400 mb-6 leading-relaxed max-w-md">
                 Empowering businesses to transform with confidence, operate with agility, and grow with purpose through
                 innovative technology solutions.
@@ -147,6 +144,23 @@ function Footer() {
                   </Link>
                 </li>
               </ul>
+            </div>
+
+            <div className="lg:col-span-1">
+              <h3 className="font-semibold text-lg mb-6">Innovation</h3>
+              <div className="relative">
+                <Image
+                  src="/images/footer-tech.jpg"
+                  alt="Cloud computing and digital innovation"
+                  width={300}
+                  height={200}
+                  className="rounded-lg shadow-lg opacity-80 hover:opacity-100 transition-opacity"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent rounded-lg"></div>
+              </div>
+              <p className="text-gray-400 text-sm mt-4 leading-relaxed">
+                Leading the future with cloud-first solutions and innovative technology partnerships.
+              </p>
             </div>
           </div>
         </div>
