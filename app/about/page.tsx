@@ -19,7 +19,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               We are a forward-thinking technology company dedicated to empowering businesses through innovative digital
-              solutions. With over 20 years of collective experience, we transform challenges into opportunities.
+              solutions. With over 25 years of combined experience, we transform challenges into opportunities.
             </p>
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8">
               <Link href="/contact">Get in Touch</Link>
@@ -133,7 +133,7 @@ export default function AboutPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Leadership Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the experienced professionals who lead our mission to deliver exceptional technology solutions.
+              Three hardworking professionals united by a shared vision and over 25 years of combined experience.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">

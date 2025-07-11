@@ -26,9 +26,9 @@ export default function Navigation() {
               className="h-24 w-auto"
             />
             <div className="hidden sm:block">
-              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
-                Equuleus
-                <span className="block text-xl lg:text-2xl font-semibold text-blue-600">Technologies</span>
+              <h1 className="text-xl lg:text-2xl font-bold text-gray-900 leading-tight">
+                <span className="text-gray-900">Equuleus</span>
+                <span className="text-blue-600 ml-1">Technologies</span>
               </h1>
             </div>
           </Link>

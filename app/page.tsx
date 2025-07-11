@@ -42,7 +42,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center space-x-8 pt-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">20+</div>
+                  <div className="text-2xl font-bold text-gray-900">25+</div>
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
                 <div className="text-center">
@@ -50,7 +50,7 @@ export default function HomePage() {
                   <div className="text-sm text-gray-600">Projects Delivered</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">50+</div>
+                  <div className="text-2xl font-bold text-gray-900">4</div>
                   <div className="text-sm text-gray-600">Happy Clients</div>
                 </div>
               </div>
