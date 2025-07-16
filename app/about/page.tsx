@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Users, Target, Award, Globe } from "lucide-react"
+import { Users, Target, Award, Globe, Lightbulb, Cog, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -14,7 +14,7 @@ export default function AboutPage() {
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               About{" "}
               <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Equuleus Technologies
+                Equuleus Technology
               </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
@@ -64,8 +64,59 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Values */}
+      {/* Centre of Excellence */}
       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Centre of Excellence</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our specialized centers drive innovation and deliver best-in-class solutions across key technology
+              domains.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Lightbulb className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Innovation Lab</h3>
+                <p className="text-gray-600">
+                  Dedicated research and development center focusing on emerging technologies, AI/ML solutions, and
+                  next-generation digital platforms.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Cog className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">DevOps Excellence</h3>
+                <p className="text-gray-600">
+                  Specialized team ensuring seamless CI/CD pipelines, infrastructure automation, and cloud-native
+                  deployments for optimal performance.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <TrendingUp className="h-8 w-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Digital Strategy</h3>
+                <p className="text-gray-600">
+                  Strategic consulting hub that helps organizations navigate digital transformation with data-driven
+                  insights and proven methodologies.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
@@ -128,49 +179,63 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Leadership Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Three hardworking professionals united by a shared vision and over 25 years of combined experience.
+              Meet the experienced professionals who lead our mission to deliver exceptional technology solutions.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-white">SM</span>
+              <CardContent className="p-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-white">SM</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Satish Mudgil</h3>
-                <p className="text-blue-600 font-medium mb-4">Chief Executive Officer</p>
-                <p className="text-gray-600 text-sm">
-                  Visionary leader with 15+ years of experience in digital transformation and strategic business
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Satish Mudgil</h3>
+                <p className="text-blue-600 font-medium mb-3 text-sm">Chief Executive Officer</p>
+                <p className="text-gray-600 text-xs">
+                  Visionary leader with 20+ years of experience in digital transformation and strategic business
                   development.
                 </p>
               </CardContent>
             </Card>
             <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8">
-                <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-white">RK</span>
+              <CardContent className="p-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-white">AT</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Rajesh Kumar</h3>
-                <p className="text-blue-600 font-medium mb-4">Chief Technology Officer</p>
-                <p className="text-gray-600 text-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Amit Thakur</h3>
+                <p className="text-blue-600 font-medium mb-3 text-sm">Chief Technology Officer</p>
+                <p className="text-gray-600 text-xs">
                   Technology expert specializing in cloud architecture, DevOps, and enterprise software solutions.
                 </p>
               </CardContent>
             </Card>
             <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8">
-                <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-white">PS</span>
+              <CardContent className="p-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-white">R</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Priya Sharma</h3>
-                <p className="text-blue-600 font-medium mb-4">Head of Operations</p>
-                <p className="text-gray-600 text-sm">
-                  Operations leader focused on delivering exceptional client experiences and operational excellence.
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Rishu</h3>
+                <p className="text-blue-600 font-medium mb-3 text-sm">Head of Business Development</p>
+                <p className="text-gray-600 text-xs">
+                  Business development leader focused on building strategic partnerships and driving revenue growth
+                  through innovative solutions.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-white">N</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Nikita</h3>
+                <p className="text-blue-600 font-medium mb-3 text-sm">Digital Marketing Lead</p>
+                <p className="text-gray-600 text-xs">
+                  Digital marketing specialist with 10+ years of experience in creating data-driven campaigns and
+                  building brand presence.
                 </p>
               </CardContent>
             </Card>

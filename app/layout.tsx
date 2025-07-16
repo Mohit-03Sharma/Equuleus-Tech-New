@@ -8,7 +8,7 @@ import Footer from "./components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Equuleus Technologies - Digital Transformation & IT Services",
+  title: "Equuleus Technology - Digital Transformation & IT Services",
   description:
     "Empowering businesses with digital transformation, IT managed services, digital marketing, and staff augmentation. 20+ years of collective experience.",
   keywords:

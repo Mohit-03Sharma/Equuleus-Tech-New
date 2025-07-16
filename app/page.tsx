@@ -22,7 +22,7 @@ export default function HomePage() {
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
                   Empowering businesses to transform with confidence, operate with agility, and grow with purpose
-                  through innovative technology solutions. 20+ years of collective experience.
+                  through innovative technology solutions. 25+ years of collective experience.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -46,7 +46,7 @@ export default function HomePage() {
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">100+</div>
+                  <div className="text-2xl font-bold text-gray-900">10+</div>
                   <div className="text-sm text-gray-600">Projects Delivered</div>
                 </div>
                 <div className="text-center">
@@ -140,16 +140,14 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
-                Why Leading Companies Choose Equuleus Technologies
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Why Equuleus Technology ?</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Proven Expertise</h3>
                     <p className="text-gray-600">
-                      20+ years of collective experience delivering successful digital transformation projects across
+                      25+ years of collective experience delivering successful digital transformation projects across
                       industries.
                     </p>
                   </div>
@@ -157,7 +155,7 @@ export default function HomePage() {
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">End-to-End Solutions</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">{"Consultancy"}</h3>
                     <p className="text-gray-600">
                       From strategy and planning to implementation and support, we handle every aspect of your
                       technology journey.
@@ -177,7 +175,7 @@ export default function HomePage() {
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">24/7 Support</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">24/7 Support by the CoE team </h3>
                     <p className="text-gray-600">
                       Round-the-clock technical support and monitoring to ensure your systems are always running
                       optimally.
@@ -195,7 +193,7 @@ export default function HomePage() {
                 className="rounded-2xl shadow-xl"
               />
               <div className="absolute -bottom-4 -right-4 bg-white p-6 rounded-xl shadow-lg">
-                <div className="text-2xl font-bold text-blue-600">99.9%</div>
+                <div className="text-2xl font-bold text-blue-600">99%</div>
                 <div className="text-sm text-gray-600">Uptime Guarantee</div>
               </div>
             </div>

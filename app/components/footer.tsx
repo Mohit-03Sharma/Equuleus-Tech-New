@@ -101,7 +101,7 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Equuleus Technologies. All rights reserved.
+              &copy; {new Date().getFullYear()} Equuleus Technology. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
@@ -117,7 +117,7 @@ export default function Footer() {
               <p className="mb-2">
                 📍 Plot No. - A-57, Munchkin Tower, Ground Floor, Ryan Enclave, Sohna Road, Gurugram, Haryana, India
               </p>
-              <p>📞 +91 9999398103 | ✉️ info@equuleustechnologies.com</p>
+              <p>📞 +91 9999398103 | ✉️ info@equuleustechnology.com</p>
             </div>
           </div>
         </div>

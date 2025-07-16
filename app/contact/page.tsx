@@ -228,7 +228,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                        <p className="text-gray-600">info@equuleustechnologies.com</p>
+                        <p className="text-gray-600">info@equuleustechnology.com</p>
                         <p className="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
                       </div>
                     </div>
