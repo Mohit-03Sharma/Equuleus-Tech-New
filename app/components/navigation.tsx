@@ -19,11 +19,11 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-28">
           <Link href="/" className="flex items-center space-x-4">
             <Image
-              src="/images/equuleus-logo.jpg"
-              alt="Equuleus Technologies Logo"
-              width={360}
-              height={120}
-              className="h-24 w-auto"
+              src="/images/new-logo.jpg"
+              alt="Equuleus Technology Logo"
+              width={80}
+              height={80}
+              className="h-16 w-16"
             />
             <div className="hidden sm:block">
               <h1 className="text-xl lg:text-2xl font-bold text-gray-900 leading-tight">
@@ -42,9 +42,6 @@ export default function Navigation() {
             </Link>
             <Link href="/services" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Services
-            </Link>
-            <Link href="/academy" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-              Academy
             </Link>
             <Link href="/careers" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Careers
@@ -89,13 +86,6 @@ export default function Navigation() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
-              </Link>
-              <Link
-                href="/academy"
-                className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Academy
               </Link>
               <Link
                 href="/careers"

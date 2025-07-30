@@ -60,11 +60,6 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/academy" className="hover:text-white transition-colors">
-                    Academy
-                  </Link>
-                </li>
-                <li>
                   <Link href="/careers" className="hover:text-white transition-colors">
                     Careers
                   </Link>
@@ -114,9 +109,7 @@ export default function Footer() {
           </div>
           <div className="mt-6 pt-6 border-t border-gray-800">
             <div className="text-center text-gray-400 text-sm">
-              <p className="mb-2">
-                📍 Plot No. - A-57, Munchkin Tower, Ground Floor, Ryan Enclave, Sohna Road, Gurugram, Haryana, India
-              </p>
+              <p className="mb-2">📍 Plot no. A-10, First Floor, Sector - 34, Rohtak, Haryana, India.</p>
               <p>📞 +91 9999398103 | ✉️ info@equuleustechnology.com</p>
             </div>
           </div>

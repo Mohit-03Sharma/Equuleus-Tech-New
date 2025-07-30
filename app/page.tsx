@@ -140,45 +140,48 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Why Equuleus Technology ?</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Why Equuleus Technology?</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Proven Expertise</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">Requirement Gathering</h3>
                     <p className="text-gray-600">
-                      25+ years of collective experience delivering successful digital transformation projects across
-                      industries.
+                      We understand your need to start the development process on the right foot.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{"Consultancy"}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">Idea Exploration</h3>
+                    <p className="text-gray-600">We shape your ideas into solutions through intensive research.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">Tech Check</h3>
                     <p className="text-gray-600">
-                      From strategy and planning to implementation and support, we handle every aspect of your
-                      technology journey.
+                      We craft the best tech stack and implementation method to execute the project.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Agile Methodology</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">Agile Development</h3>
                     <p className="text-gray-600">
-                      Fast, iterative development processes that adapt to your changing business needs and market
-                      conditions.
+                      We build the solution bit by bit with reliable results and zero hassle.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">24/7 Support by the CoE team </h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">Steady Support</h3>
                     <p className="text-gray-600">
-                      Round-the-clock technical support and monitoring to ensure your systems are always running
-                      optimally.
+                      We ensure a smooth run after launch by providing continuous support.
                     </p>
                   </div>
                 </div>
