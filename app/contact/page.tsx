@@ -194,11 +194,9 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-2">Office Address</h3>
                         <p className="text-gray-600 leading-relaxed">
-                          Plot No. - A-57, Munchkin Tower, Ground Floor
+                          Plot no. A-10, First Floor
                           <br />
-                          Ryan Enclave, Sohna Road
-                          <br />
-                          Gurugram, Haryana, India
+                          Sector - 34, Rohtak, Haryana, India
                         </p>
                       </div>
                     </div>

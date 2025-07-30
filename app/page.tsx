@@ -21,8 +21,7 @@ export default function HomePage() {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-                  Empowering businesses to transform with confidence, operate with agility, and grow with purpose
-                  through innovative technology solutions. 25+ years of collective experience.
+                  Empowering businesses to transform with confidence, operate with agility, and grow with purpose through innovative technology solutions.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -43,7 +42,7 @@ export default function HomePage() {
               <div className="flex items-center space-x-8 pt-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">25+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-sm text-gray-600">Yrs Industry Experience</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">10+</div>
